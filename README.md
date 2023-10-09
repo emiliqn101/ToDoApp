@@ -15,7 +15,3 @@ Usage:
     Run the Django development server.
     Access the app in your web browser.
     Start managing your tasks!
-
-Feel free to explore the code, provide feedback, or use it as a starting point for your own Django projects.
-
-Enjoy using this simple Django To-Do List app!
