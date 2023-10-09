@@ -8,8 +8,6 @@ Key Features:
     Mark tasks as completed.
     Delete tasks.
 
-Please note that completed tasks are not automatically moved to the bottom of the list in this version.
-
 Usage:
 
     Clone the repository.
