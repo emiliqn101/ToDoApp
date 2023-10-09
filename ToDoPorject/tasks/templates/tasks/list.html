@@ -63,9 +63,9 @@
                 var taskName = $(this).data("taskname");
                 var completed = $(this).is(":checked");
 
-                // Make a POST request to update the task state
+                
                 $.ajax({
-                    url: "/update_task/",  // Replace with your target URL
+                    url: "/update_task/",  
                     type: "POST",
                     data: {
                         taskname: taskName,
@@ -73,9 +73,9 @@
                         csrfmiddlewaretoken: $("input[name='csrfmiddlewaretoken']").val(),
                     },
                     success: function (data) {
-                        // Handle the response here, if needed
+                        
                         console.log(data.message);
-                        // Toggle the completedTask class for styling
+                        
                         $(this).closest(".taskContainer").toggleClass("completedTask", completed);
                         location.reload();
                     },
@@ -90,7 +90,7 @@
             $("#addTask").click(function () {
                 var taskName = $("#taskName").val();
 
-                // Perform basic validation (non-empty task name)
+                
                 if (taskName.trim() === "") {
                     alert("Task name cannot be empty.");
                     return;
@@ -99,19 +99,18 @@
                 // Include the CSRF token
                 var csrftoken = $("[name=csrfmiddlewaretoken]").val();
 
-                // Make a POST request to create the task
+                
                 $.ajax({
-                    url: "/create_task/",  // Replace with your target URL
+                    url: "/create_task/",  
                     type: "POST",
                     data: {
                         task_name: taskName,
                         csrfmiddlewaretoken: csrftoken,
                     },
                     success: function (data) {
-                        // Handle the response here, if needed
+                        
                         console.log(data.message);
-                        // You can update the taskList div or perform other actions
-                        // For example, you can clear the input field
+                        
                         $("#taskName").val("");
                         location.reload();
                     },
@@ -129,17 +128,16 @@
             
                 // Make a POST request to delete the task
                 $.ajax({
-                    url: "/delete_task/",  // Replace with your target URL
+                    url: "/delete_task/",  
                     type: "POST",
                     data: {
                         taskname: taskName,
                         csrfmiddlewaretoken: csrftoken,
                     },
                     success: function (data) {
-                        // Handle the response here, if needed
+                        
                         console.log(data.message);
-                        // You can update the taskList div or perform other actions
-                        // For example, you can clear the input field
+                        
                         location.reload();
                     },
                     error: function (error) {
