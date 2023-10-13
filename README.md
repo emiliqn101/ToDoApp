@@ -4,14 +4,14 @@ Description: This is a basic To-Do List application that allows users to create 
 
 **Time to Complete: 3 hours**
 
-Tech Stack:
+**Tech Stack**:
 
     Python
     Django
     JavaScript
     Ajax
 
-Key Features:
+**Key Features**:
 
     Create tasks.
     Mark tasks as completed.
