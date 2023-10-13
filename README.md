@@ -1,6 +1,8 @@
 Django To-Do List
 
-This is a basic To-Do List application that allows users to create tasks, mark them as completed, and delete them. The project was created in about 3-4 hours as my first Django project.
+This is a basic To-Do List application that allows users to create tasks, mark them as completed, and delete them.
+
+**Time to Complete: 3 hours**
 
 Tech Stack:
 
