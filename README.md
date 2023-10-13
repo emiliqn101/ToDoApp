@@ -4,10 +4,12 @@ This is a basic To-Do List. The app allows users to create tasks, mark them as c
 
 
 Tech Stack:
+
     Python
     Django
+    JavaScript
     Ajax
-
+    
 Key Features:
 
     Create tasks.
