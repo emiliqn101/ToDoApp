@@ -47,7 +47,9 @@
             {% for task in tasks %}
                 <div class="taskContainer {% if task.complete %}completedTask{% endif %}">
                     <label>
-                        <input type="checkbox" class="taskCheckbox" data-taskname="{{ task.title }}" {% if task.complete %}checked{% endif %}>
+                        <input type="checkbox" class="taskCheckbox" data-taskname="{{ task.title }}" {% if not task.complete or task.complete == "False" %}checked{% endif %}>
+
+
                         <span>{{ task.title }}</span>
                     </label>
                     <button class="deleteButton" data-taskname="{{ task.title }}">Delete</button>
@@ -59,7 +61,7 @@
     <script>
         $(document).ready(function () {
             // Event handler for checkbox changes
-            $(".taskCheckbox").change(function () {
+            $(document).on("change", ".taskCheckbox", function () {
                 var taskName = $(this).data("taskname");
                 var completed = $(this).is(":checked");
 

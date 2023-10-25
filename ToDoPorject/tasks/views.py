@@ -16,9 +16,13 @@ def create_task(request):
     if request.method == "POST":
         task_name = request.POST.get('task_name')
         if task_name:
-            task = Task.objects.create(title=task_name)
-        
-            return JsonResponse({'message': 'Task created successfully.'})
+            # Check if a task with the same name already exists
+            existing_task = Task.objects.filter(title=task_name).first()
+            if existing_task:
+                return JsonResponse({'message': 'Task with the same name already exists.'})
+            else:
+                task = Task.objects.create(title=task_name)
+                return JsonResponse({'message': 'Task created successfully.'})
         else:
             return JsonResponse({'message': 'Task name cannot be empty.'})
     else:
